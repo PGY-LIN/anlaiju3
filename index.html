@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="澎湖海景民宿推薦：安萊居 & 愛來聚。享受花火節與海邊度假時光，立即預訂！">
+  <title>安萊居 & 愛來聚海景民宿</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      margin: 0;
+      background: #fff8f0;
+      color: #333;
+    }
+    header {
+      position: relative;
+      text-align: center;
+    }
+    header img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .header-text {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    .header-text h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .header-text p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+      text-align: left;
+    }
+    h2 {
+      color: #d94f70;
+    }
+    .room-section {
+      margin-bottom: 3rem;
+    }
+    .room-gallery-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .room-gallery {
+      width: 80%;
+      max-width: 500px;
+      position: relative;
+    }
+    .room-gallery img {
+      display: none;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .room-gallery img.active {
+      display: block;
+    }
+    .nav-btn {
+      background-color: rgba(255, 255, 255, 0.9);
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      color: #d94f70;
+      border-radius: 5px;
+      margin: 0 1rem;
+    }
+    .qr {
+      width: 150px;
+      display: block;
+      margin: 1rem auto;
+    }
+    .center-text {
+      text-align: center;
+    }
+    .map-embed iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      border-radius: 10px;
+    }
+    .fb-button {
+      background-color: #ffe0e6;
+      color: #d94f70;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+    footer {
+      background: #ffe0e6;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="header.jpg" alt="主視覺圖片">
+    <div class="header-text">
+      <h1>安萊居 & 愛來聚海景民宿</h1>
+      <p>安萊居所安心在，愛來聚處幸福開</p>
+    </div>
+  </header>
+
+  <section>
+    <h2>關於我們</h2>
+    <p>「安萊居 & 愛來聚海景民宿」位於澎湖馬公安宅里，擁有無敵海景視野，鄰近市區、機場、碼頭，是放鬆心情與感受澎湖魅力的最佳選擇。每間房型設計溫馨舒適，讓您有如回家般自在。</p>
+
+    <div class="room-section">
+      <h3>雙人房</h3>
+      <p>雙人房型簡約大方，配備電視、小冰箱，獨立衛浴、乾溼分離，皆配有免治馬桶，適合情侶或小家庭。</p>
+      <div class="room-gallery-container">
+        <button class="nav-btn left" onclick="slideGallery('double', -1)">&#9664;</button>
+        <div class="room-gallery" id="double-gallery">
+          <img src="double1.jpg" class="active" alt="雙人房1">
+          <img src="double2.jpg" alt="雙人房2">
+          <img src="double3.jpg" alt="雙人房3">
+          <img src="double4.jpg" alt="雙人房4">
+        </div>
+        <button class="nav-btn right" onclick="slideGallery('double', 1)">&#9654;</button>
+      </div>
+    </div>
+
+    <div class="room-section">
+      <h3>四人房</h3>
+      <p>四人房型溫馨舒適，配有電視、小冰箱，獨立衛浴、乾溼分離，每間皆配有免治馬桶，適合朋友或家庭出遊。</p>
+      <div class="room-gallery-container">
+        <button class="nav-btn left" onclick="slideGallery('quad', -1)">&#9664;</button>
+        <div class="room-gallery" id="quad-gallery">
+          <img src="quad1.jpg" class="active" alt="四人房1">
+          <img src="quad2.jpg" alt="四人房2">
+          <img src="quad3.jpg" alt="四人房3">
+        </div>
+        <button class="nav-btn right" onclick="slideGallery('quad', 1)">&#9654;</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="center-text">
+    <h2>聯絡我們</h2>
+    <p>聯絡人：鐘秀秀<br>電話：0932-779-408</p>
+    <img src="LINE.jpeg" alt="聯絡人 QR Code" class="qr">
+
+    <h2>粉絲專頁</h2>
+    <a class="fb-button" href="https://www.facebook.com/share/1AcgEss4Rv/?mibextid=LQQJ4d" target="_blank">前往 Facebook 粉絲專頁</a>
+  </section>
+
+  <section>
+    <h2>地圖位置</h2>
+    <iframe src="https://www.google.com/maps?q=澎湖縣馬公市安宅里宅腳嶼27-16號&output=embed"></iframe>
+    <p class="center-text">地址：澎湖縣馬公市安宅里宅腳嶼27-16號（海龍釣蝦場旁）</p>
+  </section>
+
+  <footer>
+    &copy; 2025 安萊居 & 愛來聚海景民宿
+  </footer>
+
+  <script>
+    const galleryIndexes = { double: 0, quad: 0 };
+    function slideGallery(id, delta) {
+      const gallery = document.getElementById(`${id}-gallery`);
+      const images = gallery.getElementsByTagName('img');
+      images[galleryIndexes[id]].classList.remove('active');
+      galleryIndexes[id] = (galleryIndexes[id] + delta + images.length) % images.length;
+      images[galleryIndexes[id]].classList.add('active');
+    }
+  </script>
+</body>
+</html>
