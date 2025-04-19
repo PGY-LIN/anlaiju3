@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+import zipfile
+import os
+
+# 建立專案資料夾
+project_name = "anlaiju_website"
+os.makedirs(project_name, exist_ok=True)
+
+# HTML 內容
+html_content = """<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
@@ -118,7 +126,7 @@
 </head>
 <body>
   <header>
-    <img src="header.jpg" alt="主視覺圖片">
+    <img src="IMG_0013.jpg" alt="主視覺圖片">
     <div class="header-text">
       <h1>安萊居 & 愛來聚海景民宿</h1>
       <p>安萊居所安心在，愛來聚處幸福開</p>
@@ -135,10 +143,10 @@
       <div class="room-gallery-container">
         <button class="nav-btn left" onclick="slideGallery('double', -1)">&#9664;</button>
         <div class="room-gallery" id="double-gallery">
-          <img src="double1.jpg" class="active" alt="雙人房1">
-          <img src="double2.jpg" alt="雙人房2">
-          <img src="double3.jpg" alt="雙人房3">
-          <img src="double4.jpg" alt="雙人房4">
+          <img src="IMG_9371.jpg" class="active" alt="雙人房1">
+          <img src="IMG_9374.jpg" alt="雙人房2">
+          <img src="IMG_9383.jpg" alt="雙人房3">
+          <img src="IMG_9375.jpg" alt="雙人房4">
         </div>
         <button class="nav-btn right" onclick="slideGallery('double', 1)">&#9654;</button>
       </div>
@@ -150,9 +158,9 @@
       <div class="room-gallery-container">
         <button class="nav-btn left" onclick="slideGallery('quad', -1)">&#9664;</button>
         <div class="room-gallery" id="quad-gallery">
-          <img src="quad1.jpg" class="active" alt="四人房1">
-          <img src="quad2.jpg" alt="四人房2">
-          <img src="quad3.jpg" alt="四人房3">
+          <img src="IMG_9361.jpg" class="active" alt="四人房1">
+          <img src="IMG_9387.jpg" alt="四人房2">
+          <img src="IMG_9364.jpg" alt="四人房3">
         </div>
         <button class="nav-btn right" onclick="slideGallery('quad', 1)">&#9654;</button>
       </div>
@@ -162,7 +170,7 @@
   <section class="center-text">
     <h2>聯絡我們</h2>
     <p>聯絡人：鐘秀秀<br>電話：0932-779-408</p>
-    <img src="LINE.jpeg" alt="聯絡人 QR Code" class="qr">
+    <img src="IMG_0012.jpeg" alt="聯絡人 QR Code" class="qr">
 
     <h2>粉絲專頁</h2>
     <a class="fb-button" href="https://www.facebook.com/share/1AcgEss4Rv/?mibextid=LQQJ4d" target="_blank">前往 Facebook 粉絲專頁</a>
@@ -190,3 +198,19 @@
   </script>
 </body>
 </html>
+"""
+
+# 寫入 index.html
+html_path = os.path.join(project_name, "index.html")
+with open(html_path, "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+# 建立 ZIP 檔
+zip_path = f"/mnt/data/{project_name}.zip"
+with zipfile.ZipFile(zip_path, "w") as zipf:
+    for foldername, _, filenames in os.walk(project_name):
+        for filename in filenames:
+            filepath = os.path.join(foldername, filename)
+            zipf.write(filepath, os.path.relpath(filepath, project_name))
+
+zip_path
