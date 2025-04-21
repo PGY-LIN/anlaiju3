@@ -47,6 +47,18 @@
     h2 {
       color: #d94f70;
     }
+    .center-title {
+      text-align: center;
+    }
+    .center-text {
+      text-align: center;
+    }
+    .room-title {
+      text-align: center;
+    }
+    .room-desc {
+      text-align: center;
+    }
     .room-section {
       margin-bottom: 3rem;
     }
@@ -58,7 +70,7 @@
     }
     .room-gallery {
       width: 90%;
-      max-width: 700px;
+      max-width: 600px;
       position: relative;
     }
     .room-gallery img {
@@ -85,12 +97,6 @@
       width: 150px;
       display: block;
       margin: 1rem auto;
-    }
-    .center-text {
-      text-align: center;
-    }
-    .center-text h2 {
-      text-align: center;
     }
     .map-embed iframe {
       width: 100%;
@@ -129,13 +135,14 @@
   </header>
 
   <section>
-    <h2>關於我們</h2>
+    <h2 class="center-title">關於我們</h2>
     <p>「安萊居 & 愛來聚海景民宿」位於澎湖馬公安宅里，擁有無敵海景視野，鄰近市區、機場、碼頭，是放鬆心情與感受澎湖魅力的最佳選擇。每間房型設計溫馨舒適，讓您有如回家般自在。</p>
 
+    <h2 class="center-title">房型簡介</h2>
+
     <div class="room-section">
-      <h2>房型簡介</h2>
-      <h3>雙人房</h3>
-      <p>雙人房型簡約大方，配備電視、小冰箱，獨立衛浴、乾溼分離，皆配有免治馬桶，適合情侶或小家庭。</p>
+      <h3 class="room-title">雙人房</h3>
+      <p class="room-desc">雙人房型簡約大方，配備電視、小冰箱，獨立衛浴、乾溼分離，皆配有免治馬桶，適合情侶或小家庭。</p>
       <div class="room-gallery-container">
         <button class="nav-btn left" onclick="slideGallery('double', -1)">&#9664;</button>
         <div class="room-gallery" id="double-gallery">
@@ -149,8 +156,8 @@
     </div>
 
     <div class="room-section">
-      <h3>四人房</h3>
-      <p>四人房型溫馨舒適，配有電視、小冰箱，獨立衛浴、乾溼分離，每間皆配有免治馬桶，適合朋友或家庭出遊。</p>
+      <h3 class="room-title">四人房</h3>
+      <p class="room-desc">四人房型溫馨舒適，配有電視、小冰箱，獨立衛浴、乾溼分離，每間皆配有免治馬桶，適合朋友或家庭出遊。</p>
       <div class="room-gallery-container">
         <button class="nav-btn left" onclick="slideGallery('quad', -1)">&#9664;</button>
         <div class="room-gallery" id="quad-gallery">
@@ -173,7 +180,7 @@
   </section>
 
   <section class="map-embed">
-    <h2 style="text-align:center;">我們的位置</h2>
+    <h2 class="center-title">我們的位置</h2>
     <iframe src="https://www.google.com/maps?q=澎湖縣馬公市安宅里宅腳嶼27-16號&output=embed"></iframe>
     <p>地址：澎湖縣馬公市安宅里宅腳嶼27-16號（海龍釣蝦場旁）</p>
   </section>
